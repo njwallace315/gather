@@ -1,6 +1,6 @@
 const {assert} = require('chai');
 const request = require('supertest');
-
+const Item = require('../../models/item');
 const app = require('../../app');
 
 const {parseTextFromHTML, seedItemToDatabase} = require('../test-utils');
@@ -21,6 +21,19 @@ describe('Server path: /items/:id', () => {
 
   		assert.include(parseTextFromHTML(response.text, '#item-title'), item.title);
   		assert.include(parseTextFromHTML(response.text, '#item-description'), item.description);
+  	});
+  });
+  describe('/delete', () => {
+  	describe('POST', () => {
+  		it('removes item from rendering', async () => {
+  			const item = await seedItemToDatabase();
+
+  			const response = await request(app)
+  				.post(`/items/${item._id}/delete`);
+			const found = await Item.findById(item._id);
+  			
+  			assert.equal(found, null);
+  		});
   	});
   });
 });

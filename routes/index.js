@@ -15,6 +15,11 @@ router.get('/items/:itemId', async (req, res, next) => {
   res.render('single', {item: item});
 });
 
+router.post('/items/:itemId/delete', async (req, res, next) => {
+  await Item.findByIdAndRemove(req.params.itemId);
+  res.redirect('/');
+});
+
 router.post('/items/create', async (req, res, next) => {
   const {title, description, imageUrl} = req.body;
   const newItem = new Item({title, description, imageUrl});

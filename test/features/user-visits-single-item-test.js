@@ -1,7 +1,7 @@
 const {assert} = require('chai');
 const {buildItemObject} = require('../test-utils');
-describe('user submits a new item and returns to main page', () => {
-	describe('new item is rendered and link to single item page is clicked', () => {
+describe('new item is rendered with view and delete clickable icons', () => {
+	describe('view icon is clicked', () => {
 		it('renders item description', () => {
 			const itemToCreate = buildItemObject();
 			browser.url('/items/create');
