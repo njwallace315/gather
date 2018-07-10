@@ -1,5 +1,4 @@
 const router = require('express').Router();
-
 const Item = require('../models/item');
 
 router.get('/', async (req, res, next) => {
@@ -9,6 +8,11 @@ router.get('/', async (req, res, next) => {
 
 router.get('/items/create', async (req, res, next) => {
   res.render('create');
+});
+
+router.get('/items/:itemId', async (req, res, next) => {
+  const item = await Item.findById(req.params.itemId);
+  res.render('single', {item: item});
 });
 
 router.post('/items/create', async (req, res, next) => {
