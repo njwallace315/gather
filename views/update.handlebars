@@ -2,8 +2,6 @@
     <title>gather</title>
     <link rel="icon" type="image/ico" href="img/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
-    <link rel='stylesheet' href='stylesheets/reset.css' />
-    <link rel='stylesheet' href='stylesheets/style.css' />
   </head>
   <body>
     <div class="create-container">
@@ -26,8 +24,8 @@
               <input id="imageUrl-input" name="imageUrl" oninput="handleChange" value="{{item.imageUrl}}"/>
             
               <div class="form-navigation">
-                <a href="/">
-                    <img class="back-arrow" src="img/back.svg" alt="back">
+                <a href="/items/{{item._id}}">
+                    <img class="back-arrow" src="/img/back.svg" alt="back">
                 </a>
                 <button class="button submit-button" id="submit-button" type="submit">
                     <p>Update</p>
