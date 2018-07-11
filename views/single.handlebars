@@ -1,9 +1,9 @@
 <head>
-    <title>gather</title>
+    <title id="head-title">gather</title>
     <link rel="icon" type="image/ico" href="img/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
-    <link rel='stylesheet' href='stylesheets/reset.css' />
-    <link rel='stylesheet' href='stylesheets/style.css' />
+    <link rel='stylesheet' href='../public/stylesheets/reset.css' />
+    <link rel='stylesheet' href='../public/stylesheets/style.css' />
   </head>
   <body>
     <div class="single-item-container">
@@ -23,7 +23,7 @@
             <a href="/">
               <img class="back-arrow" src="/img/back.svg" alt="back">
             </a>
-            <a href="update.html">
+            <a href="/items/{{item._id}}/update" id="update-button">
               <div class="button update-button">
                 Update
               </div>

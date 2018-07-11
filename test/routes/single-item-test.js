@@ -8,7 +8,6 @@ const {connectDatabaseAndDropData, diconnectDatabase} = require('../setup-teardo
 
 describe('Server path: /items/:id', () => {
   beforeEach(connectDatabaseAndDropData);
-
   afterEach(diconnectDatabase);
 
   // Write your test blocks below:
